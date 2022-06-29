@@ -31,7 +31,6 @@ class RecipeAdapter(
         private val binding: RecipeBinding,
         listener: RecipeInteractionListener
     ) : RecyclerView.ViewHolder(binding.root) {
-
         private lateinit var recipe: Recipe
 
         private val popupMenu by lazy {
@@ -83,9 +82,10 @@ class RecipeAdapter(
         }
 
         @DrawableRes
-        private fun getFavoriteIconResId(liked: Boolean) =
+        fun getFavoriteIconResId(liked:Boolean) =
             if (liked) R.drawable.icon_is_favorites else R.drawable.icon_is_not_favorites
     }
+
 }
 
 private object DiffCallback : DiffUtil.ItemCallback<Recipe>() {

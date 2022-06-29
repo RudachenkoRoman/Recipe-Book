@@ -70,42 +70,65 @@
 
     <RadioGroup
         android:id="@+id/categoryRecipeCheckBoxOne"
-        android:layout_width="171dp"
-        android:layout_height="193dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="198dp"
+        android:layout_height="218dp"
+        android:layout_marginBottom="116dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/category_recipe"
+        app:layout_constraintVertical_bias="0.487">
 
         <RadioButton
             android:id="@+id/checkBoxEuropean"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/european_type" />
 
         <RadioButton
             android:id="@+id/checkBoxAsian"
             android:layout_width="128dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/asian_type" />
 
         <RadioButton
             android:id="@+id/checkBoxPanasian"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/panasian_type" />
 
         <RadioButton
             android:id="@+id/checkBoxEastern"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/eastern_type" />
+
+        <RadioButton
+            android:id="@+id/checkBoxAmerican"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black_50"
+            android:text="@string/american_type" />
+
+        <RadioButton
+            android:id="@+id/checkBoxRussian"
+            android:layout_width="186dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="80dp"
+            android:buttonTint="@color/black_50"
+            android:text="@string/russian_type" />
+
+        <RadioButton
+            android:id="@+id/checkBoxMediterranean"
+            android:layout_width="182dp"
+            android:layout_height="30dp"
+            android:buttonTint="@color/black_50"
+            android:text="@string/mediterranean_type" />
 
 
     </RadioGroup>
@@ -122,49 +145,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/icon_check" />
 
-    <RadioGroup
-        android:id="@+id/categoryRecipeCheckBoxTwo"
-        android:layout_width="185dp"
-        android:layout_height="194dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/categoryRecipeCheckBoxOne"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/categoryRecipeCheckBoxOne"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0">
-
-        <RadioButton
-            android:id="@+id/checkBoxAmerican"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/black_50"
-            android:text="@string/american_type" />
-
-        <RadioButton
-            android:id="@+id/checkBoxRussian"
-            android:layout_width="186dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="80dp"
-            android:buttonTint="@color/black_50"
-            android:text="@string/russian_type" />
-
-        <RadioButton
-            android:id="@+id/checkBoxMediterranean"
-            android:layout_width="182dp"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/black_50"
-            android:text="@string/mediterranean_type" />
-    </RadioGroup>
-
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="235dp"
-        android:layout_height="29dp"
+        android:id="@+id/category_recipe"
+        android:layout_width="230dp"
+        android:layout_height="31dp"
         android:layout_marginTop="12dp"
+        android:gravity="center"
         android:text="@string/category_recipe_hint"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textRecipe" />
 

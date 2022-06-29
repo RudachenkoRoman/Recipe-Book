@@ -34,6 +34,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
         repository.getData()
     }
 
+
     override fun updateContent(
         id: Long,
         title: String,

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,29 +16,30 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topMenu"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            android:backgroundTint="@color/black_50"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="@color/black_50"
             app:title="@string/app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <CheckBox
         android:id="@+id/checkBoxEuropean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:clickable="true"
         android:text="@string/european_type"
-        app:layout_constraintEnd_toEndOf="@id/buttonApply"
-        app:layout_constraintStart_toStartOf="@id/buttonApply"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <CheckBox
         android:id="@+id/checkBoxAsian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:text="@string/asian_type"
@@ -48,8 +48,9 @@
 
     <CheckBox
         android:id="@+id/checkBoxPanasian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:text="@string/panasian_type"
@@ -58,55 +59,68 @@
 
     <CheckBox
         android:id="@+id/checkBoxEastern"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:text="@string/eastern_type"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxPanasian"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxPanasian" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxMediterranean" />
 
     <CheckBox
         android:id="@+id/checkBoxAmerican"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="56dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:text="@string/american_type"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxEastern"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEastern" />
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxRussian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxEuropean"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintVertical_bias="0.761" />
 
     <CheckBox
         android:id="@+id/checkBoxRussian"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:text="@string/russian_type"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxAmerican"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxAmerican" />
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxMediterranean"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxAsian"
+        app:layout_constraintTop_toTopOf="@+id/checkBoxAsian"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/checkBoxMediterranean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
         android:buttonTint="@color/black_50"
         android:checked="true"
         android:text="@string/mediterranean_type"
-        app:layout_constraintStart_toStartOf="@+id/checkBoxRussian"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxRussian" />
+        app:layout_constraintStart_toEndOf="@+id/checkBoxPanasian"
+        app:layout_constraintTop_toTopOf="@+id/checkBoxPanasian" />
 
     <Button
         android:id="@+id/buttonApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black_50"
         android:clickable="true"
         android:text="@string/button_apply_text"
-        android:textColor="@color/black"
-        android:backgroundTint="@color/black_50"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxMediterranean" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEastern" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentCreateBinding
+import ru.netology.nerecipe.dto.Recipe
 import ru.netology.nerecipe.viewModel.RecipeViewModel
+import kotlin.random.Random
 
 class RecipeCreateFragment : Fragment() {
     private val viewModel by activityViewModels<RecipeViewModel>()
@@ -31,11 +34,6 @@ class RecipeCreateFragment : Fragment() {
                 R.id.checkBoxAsian -> categoryRecipeNumber = "Asian (Азиатская кухня)"
                 R.id.checkBoxPanasian -> categoryRecipeNumber = "Panasian (Паназиатская кухня)"
                 R.id.checkBoxEastern -> categoryRecipeNumber = "Eastern (Восточная кухня)"
-            }
-        }
-
-        binding.categoryRecipeCheckBoxTwo.setOnCheckedChangeListener { _, i ->
-            when (i) {
                 R.id.checkBoxAmerican -> categoryRecipeNumber = "American (Американская кухня)"
                 R.id.checkBoxRussian -> categoryRecipeNumber = "Russian (Русская кухня)"
                 R.id.checkBoxMediterranean -> categoryRecipeNumber = "Mediterranean (Срнеднеземнаморская кухня)"
@@ -57,7 +55,7 @@ class RecipeCreateFragment : Fragment() {
                 title = title,
                 authorName = authorName,
                 textRecipe = textRecipe,
-                categoryRecipe = categoryRecipeNumber
+                categoryRecipe = categoryRecipeNumber,
             )
         ) return
 

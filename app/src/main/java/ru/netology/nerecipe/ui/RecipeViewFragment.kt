@@ -23,6 +23,7 @@ class RecipeViewFragment : Fragment() {
             }
             true
         }
+
     }.root
 
     private fun incomingArg (binding: FragmentViewRecipeBinding) {
@@ -30,5 +31,6 @@ class RecipeViewFragment : Fragment() {
         binding.authorName.text = args.viewRecipe?.authorName.toString()
         binding.categoryRecipe.text = args.viewRecipe?.categoryRecipe.toString()
         binding.textRecipe.text = args.viewRecipe?.textRecipe.toString()
+
     }
 }

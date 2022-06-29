@@ -10,8 +10,9 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="235dp"
-        android:layout_height="29dp"
+        android:layout_height="31dp"
         android:layout_marginTop="12dp"
+        android:gravity="center"
         android:text="@string/category_recipe_hint"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +32,7 @@
             android:id="@+id/topMenu"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:subtitleTextColor="#FFFFFF"
             app:title="@string/app_name" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -82,62 +84,48 @@
 
     <RadioGroup
         android:id="@+id/categoryRecipeCheckBoxOne"
-        android:layout_width="172dp"
-        android:layout_height="196dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="198dp"
+        android:layout_height="214dp"
+        android:layout_marginStart="124dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSave"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.147">
 
         <RadioButton
             android:id="@+id/checkBoxEuropean"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/european_type" />
 
         <RadioButton
             android:id="@+id/checkBoxAsian"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/asian_type" />
 
         <RadioButton
             android:id="@+id/checkBoxPanasian"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:buttonTint="@color/black_50"
             android:text="@string/panasian_type" />
 
         <RadioButton
             android:id="@+id/checkBoxEastern"
             android:layout_width="157dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:backgroundTint="@color/black_50"
             android:buttonTint="@color/black_50"
             android:text="@string/eastern_type" />
 
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/categoryRecipeCheckBoxTwo"
-        android:layout_width="186dp"
-        android:layout_height="191dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/categoryRecipeCheckBoxOne"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/categoryRecipeCheckBoxOne"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0">
-
         <RadioButton
             android:id="@+id/checkBoxAmerican"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:backgroundTint="@color/black_50"
             android:buttonTint="@color/black_50"
             android:text="@string/american_type" />
@@ -145,7 +133,7 @@
         <RadioButton
             android:id="@+id/checkBoxRussian"
             android:layout_width="186dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginEnd="80dp"
             android:backgroundTint="@color/black_50"
             android:buttonTint="@color/black_50"
@@ -154,10 +142,11 @@
         <RadioButton
             android:id="@+id/checkBoxMediterranean"
             android:layout_width="182dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:backgroundTint="@color/black_50"
             android:buttonTint="@color/black_50"
             android:text="@string/mediterranean_type" />
+
     </RadioGroup>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

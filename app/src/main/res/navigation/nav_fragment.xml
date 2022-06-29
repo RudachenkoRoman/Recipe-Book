@@ -23,7 +23,7 @@
             app:destination="@id/recipeViewFragment" />
         <action
             android:id="@+id/recipeFilterFragment"
-            app:destination="@id/recipeFilterFragment" />
+            app:destination="@id/recipeFilterFragment"/>
 
     </fragment>
 
@@ -33,7 +33,8 @@
 
         <action
             android:id="@+id/action_favoriteFragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
+            app:destination="@id/feedFragment"
+            />
     </fragment>
 
     <fragment
@@ -74,5 +75,6 @@
     <activity
         android:id="@+id/appActivity"
         android:name="ru.netology.nerecipe.ui.AppActivity"
-        android:label="AppActivity" />
+        android:label="AppActivity"
+        tools:layout="@layout/activity_app"/>
 </navigation>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -60,11 +61,20 @@ class FeedRecipeFragment : Fragment() {
         binding.listRecipe.adapter = adapter
 
         viewModel.data.observe(viewLifecycleOwner) { recipes ->
+            val favRecipesIsEmpty = recipes.isEmpty()
+            if (favRecipesIsEmpty) {
+                binding.textBackground1.isVisible = favRecipesIsEmpty
+                binding.iconBackground1.isVisible = favRecipesIsEmpty
+            }
+            val favRecipesIsNotEmpty = recipes.isNotEmpty()
+            if (favRecipesIsNotEmpty) {
+                binding.textBackground1.isInvisible = favRecipesIsNotEmpty
+                binding.iconBackground1.isInvisible = favRecipesIsNotEmpty
+            }
             adapter.submitList(recipes)
         }
 
         if (viewModel.filterIsActive) {
-
             binding.buttonClearFilter.isVisible = viewModel.filterIsActive
             binding.buttonClearFilter.setOnClickListener {
                 viewModel.clearFilter()
@@ -72,6 +82,14 @@ class FeedRecipeFragment : Fragment() {
                 binding.buttonClearFilter.visibility = View.GONE
                 viewModel.data.observe(viewLifecycleOwner) { recipe ->
                     adapter.submitList(recipe)
+                }
+                viewModel.data.observe(viewLifecycleOwner) { recipes ->
+                    val favRecipesIsNotEmpty = recipes.isNotEmpty()
+                    if (favRecipesIsNotEmpty) {
+                        binding.textBackground1.isInvisible = favRecipesIsNotEmpty
+                        binding.iconBackground1.isInvisible = favRecipesIsNotEmpty
+                    }
+                    adapter.submitList(recipes)
                 }
             }
         } else {
@@ -89,7 +107,7 @@ class FeedRecipeFragment : Fragment() {
                             adapter.submitList(recipe)
                         }
                     }
-                    if (TextUtils.isEmpty(newText)){
+                    if (TextUtils.isEmpty(newText)) {
                         viewModel.clearFilter()
                         viewModel.data.observe(viewLifecycleOwner) { recipe ->
                             adapter.submitList(recipe)
@@ -117,9 +135,9 @@ class FeedRecipeFragment : Fragment() {
         binding.buttonAdd.setOnClickListener {
             viewModel.onCreateClicked()
         }
-
     }.root
 }
+
 
 
 

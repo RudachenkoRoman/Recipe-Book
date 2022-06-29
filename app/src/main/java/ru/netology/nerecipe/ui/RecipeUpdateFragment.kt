@@ -31,11 +31,6 @@ class RecipeUpdateFragment : Fragment() {
                 R.id.checkBoxAsian -> categoryRecipeNumber = "Asian (Азиатская кухня)"
                 R.id.checkBoxPanasian -> categoryRecipeNumber = "Panasian (Паназиатская кухня)"
                 R.id.checkBoxEastern -> categoryRecipeNumber = "Eastern (Восточная кухня)"
-            }
-        }
-
-        binding.categoryRecipeCheckBoxTwo.setOnCheckedChangeListener { _, i ->
-            when (i) {
                 R.id.checkBoxAmerican -> categoryRecipeNumber = "American (Американская кухня)"
                 R.id.checkBoxRussian -> categoryRecipeNumber = "Russian (Русская кухня)"
                 R.id.checkBoxMediterranean -> categoryRecipeNumber = "Mediterranean (Срнеднеземнаморская кухня)"

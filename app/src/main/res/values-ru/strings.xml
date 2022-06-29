@@ -26,6 +26,7 @@
     <string name="mediterranean_type" translatable="false">Средиземноморская</string>
     <string name="remove">Удалить</string>
     <string name="edit">Редактировать</string>
-    <string name="text">Выберите категорию для блюда</string>
+    <string name="add_ingredient_title">Ингредиенты</string>
+    <string name="add_step_title">Основные шаги</string>
 
 </resources>

@@ -26,11 +26,10 @@ class RecipeFavoriteFragment : Fragment() {
 
             val favRecipes = recipes.none { it.isFavorite }
             if (favRecipes) {
-                binding.textBackground.isVisible = favRecipes
-                binding.iconBackground.isVisible = favRecipes
+                binding.textBackground1.isVisible = favRecipes
+                binding.iconBackground1.isVisible = favRecipes
             }
         }
-
 
         val adapter = RecipeAdapter(viewModel)
         binding.listFavorite.adapter = adapter
@@ -88,6 +87,4 @@ class RecipeFavoriteFragment : Fragment() {
             findNavController().navigate(directions)
         }
     }
-
-
 }
