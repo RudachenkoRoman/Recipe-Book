@@ -1,5 +1,5 @@
 # NeRecipe
-## Главный экран срецептами
+## Главный экран с рецептами
 ![all_recipe](https://user-images.githubusercontent.com/97969577/176727442-774a9f9b-9412-4532-b0aa-e1caf20100e7.gif)
 ## Поиск
 ![search](https://user-images.githubusercontent.com/97969577/176727474-d07862bd-3ce6-4b5f-86dd-8ab408e2677a.gif)
