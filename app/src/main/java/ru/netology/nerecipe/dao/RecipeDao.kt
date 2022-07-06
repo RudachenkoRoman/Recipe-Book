@@ -3,6 +3,7 @@ package ru.netology.nerecipe.dao
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import ru.netology.nerecipe.dto.RecipeEntity
 
@@ -14,16 +15,19 @@ interface RecipeDao {
     @Insert
     fun save(recipe: RecipeEntity)
 
-    @Query("UPDATE recipes SET " +
-            "title = :title," +
-            "authorName = :authorName, " +
-            "categoryRecipe = :categoryRecipe," +
-            "textRecipe = :textRecipe" +
-            " WHERE id = :id")
-    fun updateContentById(
-        id: Long, title: String, authorName: String,
-        categoryRecipe: String, textRecipe: String
-    )
+//    @Query("UPDATE recipes SET " +
+//            "title = :title," +
+//            "authorName = :authorName, " +
+//            "categoryRecipe = :categoryRecipe," +
+//            "textRecipe = :textRecipe" +
+//            " WHERE id = :id")
+//    fun updateContentById(
+//        id: Long, title: String, authorName: String,
+//        categoryRecipe: String, textRecipe: String
+//    )
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun updateContentById(recipe: RecipeEntity)
 
     @Query(
         """

@@ -3,12 +3,16 @@ package ru.netology.nerecipe.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentFilterBinding
 import ru.netology.nerecipe.viewModel.RecipeViewModel
+
 
 class RecipeFilterFragment : Fragment() {
     private val viewModel by activityViewModels<RecipeViewModel>()
@@ -23,47 +27,42 @@ class RecipeFilterFragment : Fragment() {
         }
     }.root
 
-
     private fun onApplyButtonClicked(binding: FragmentFilterBinding) {
         var checkedCount = 0
         val numberOfFilters = 7
 
         if (!binding.checkBoxEuropean.isChecked) {
             ++checkedCount
-            viewModel.showEuropean("European (Европейская кухня)")
+            viewModel.showEuropean("Европейская кухня")
         }
         if (!binding.checkBoxAsian.isChecked) {
             ++checkedCount
-            viewModel.showAsian("Asian (Азиатская кухня)")
-
+            viewModel.showAsian("Азиатская кухня")
         }
         if (!binding.checkBoxPanasian.isChecked) {
             ++checkedCount
-            viewModel.showPanasian("Panasian (Паназиатская кухня)")
-
+            viewModel.showPanasian("Паназиатская кухня")
         }
         if (!binding.checkBoxEastern.isChecked) {
             ++checkedCount
-            viewModel.showEastern("Eastern (Восточная кухня)")
+            viewModel.showEastern("Восточная кухня")
         }
         if (!binding.checkBoxAmerican.isChecked) {
             ++checkedCount
-            viewModel.showAmerican("American (Американская кухня)")
+            viewModel.showAmerican("Американская кухня")
         }
         if (!binding.checkBoxRussian.isChecked) {
             ++checkedCount
-            viewModel.showRussian("Russian (Русская кухня)")
+            viewModel.showRussian("Русская кухня")
         }
         if (!binding.checkBoxMediterranean.isChecked) {
             ++checkedCount
-            viewModel.showMediterranean( "Mediterranean (Срнеднеземнаморская кухня)")
+            viewModel.showMediterranean( "Средиземноморская кухня")
         }
-
         if (checkedCount == numberOfFilters) {
-            Toast.makeText(activity, "You cannot disable all filters", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, "Выберите хотя бы один вариант", Toast.LENGTH_LONG).show()
             return
         } else findNavController().popBackStack()
     }
-
 }
 

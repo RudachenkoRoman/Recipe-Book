@@ -23,8 +23,9 @@ class RecipeRepositoryImpl(
     override fun save(recipe: Recipe) {
         if (recipe.id == RecipeRepository.NEW_ID) dao.save(recipe = recipe.toEntity())
         else dao.updateContentById(
-            recipe.id, recipe.title, recipe.authorName,
-            recipe.categoryRecipe, recipe.textRecipe
+            recipe.toEntity()
+//            recipe.id, recipe.title, recipe.authorName,
+//            recipe.categoryRecipe, recipe.textRecipe
         )
     }
 
@@ -86,7 +87,7 @@ class RecipeRepositoryImpl(
 
     override fun showMediterranean(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type}
+            it.filter { it.categoryRecipe != type }
         }
     }
 }

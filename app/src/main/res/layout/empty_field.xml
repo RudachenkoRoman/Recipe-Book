@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="ru.netology.nerecipe.ui.FeedRecipeFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/topBar"
@@ -15,13 +16,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topMenu"
-            android:backgroundTint="@color/black_50"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:backgroundTint="@color/black_50"
             app:title="@string/app_name" />
 
         <SearchView
@@ -80,9 +80,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/botton_menu"
-        />
+        app:menu="@menu/botton_menu" />
 
     <ImageView
         android:id="@+id/icon_background1"
