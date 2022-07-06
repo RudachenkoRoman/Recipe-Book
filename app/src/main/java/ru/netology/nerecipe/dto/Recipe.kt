@@ -15,16 +15,5 @@ data class Recipe(
     val textRecipe: String,
     val isFavorite: Boolean = false,
 
-    ) : Parcelable{
-
-    enum class Category(val category: String) {
-        European("Европейская кухня"),
-        Asian("Азиатская кухня"),
-        Panasian("Паназиатская кухня"),
-        Eastern("Восточная кухня"),
-        American("Американская кухня"),
-        Russian("Русская кухня",),
-        Mediterranean("Средиземноморская кухня")
-    }
-}
+    ) : Parcelable
 
