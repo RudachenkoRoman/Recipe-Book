@@ -49,45 +49,45 @@ class RecipeRepositoryImpl(
 
     override fun showEuropean(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { !it.categoryRecipe.equals(type) }
         }
     }
 
     override fun showAsian(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { it.categoryRecipe.equals(type) }
         }
     }
 
     override fun showPanasian(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { it.categoryRecipe.equals(type) }
         }
     }
 
     override fun showEastern(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { it.categoryRecipe.equals(type) }
         }
     }
 
     override fun showAmerican(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { it.categoryRecipe.equals(type) }
         }
     }
 
 
     override fun showRussian(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { it.categoryRecipe.equals(type) }
         }
     }
 
 
     override fun showMediterranean(type: String) {
         data = data.map {
-            it.filter { it.categoryRecipe != type }
+            it.filter { it.categoryRecipe.equals(type) }
         }
     }
 }

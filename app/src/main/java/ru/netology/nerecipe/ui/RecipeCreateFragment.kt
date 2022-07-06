@@ -4,16 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentCreateBinding
 import ru.netology.nerecipe.dto.Category
-import ru.netology.nerecipe.dto.Recipe
+
 import ru.netology.nerecipe.viewModel.RecipeViewModel
-import kotlin.random.Random
 
 class RecipeCreateFragment : Fragment() {
     private val viewModel by activityViewModels<RecipeViewModel>()
