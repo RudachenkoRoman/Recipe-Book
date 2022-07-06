@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentUpdateBinding
-import ru.netology.nerecipe.dto.Category
 import ru.netology.nerecipe.dto.Recipe
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
@@ -29,13 +28,13 @@ class RecipeUpdateFragment : Fragment() {
 
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
-                R.id.checkBoxEuropean -> categoryRecipeNumber = Category.European.category
-                R.id.checkBoxAsian -> categoryRecipeNumber = Category.Asian.category
-                R.id.checkBoxPanasian -> categoryRecipeNumber = Category.Panasian.category
-                R.id.checkBoxEastern -> categoryRecipeNumber = Category.Eastern.category
-                R.id.checkBoxAmerican -> categoryRecipeNumber = Category.American.category
-                R.id.checkBoxRussian -> categoryRecipeNumber = Category.Russian.category
-                R.id.checkBoxMediterranean -> categoryRecipeNumber = Category.Mediterranean.category
+                R.id.checkBoxEuropean -> categoryRecipeNumber = Recipe.Category.European.category
+                R.id.checkBoxAsian -> categoryRecipeNumber = Recipe.Category.Asian.category
+                R.id.checkBoxPanasian -> categoryRecipeNumber = Recipe.Category.Panasian.category
+                R.id.checkBoxEastern -> categoryRecipeNumber = Recipe.Category.Eastern.category
+                R.id.checkBoxAmerican -> categoryRecipeNumber = Recipe.Category.American.category
+                R.id.checkBoxRussian -> categoryRecipeNumber = Recipe.Category.Russian.category
+                R.id.checkBoxMediterranean -> categoryRecipeNumber = Recipe.Category.Mediterranean.category
             }
         }
 
