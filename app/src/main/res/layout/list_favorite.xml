@@ -28,9 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/bottomToolbar"
         app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="-134dp"
         tools:listitem="@layout/recipe" />
 
@@ -60,16 +58,5 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomToolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/botton_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,17 +15,6 @@ interface RecipeDao {
     @Insert
     fun save(recipe: RecipeEntity)
 
-//    @Query("UPDATE recipes SET " +
-//            "title = :title," +
-//            "authorName = :authorName, " +
-//            "categoryRecipe = :categoryRecipe," +
-//            "textRecipe = :textRecipe" +
-//            " WHERE id = :id")
-//    fun updateContentById(
-//        id: Long, title: String, authorName: String,
-//        categoryRecipe: String, textRecipe: String
-//    )
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun updateContentById(recipe: RecipeEntity)
 

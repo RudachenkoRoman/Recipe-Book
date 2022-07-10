@@ -9,13 +9,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentCreateBinding
-import ru.netology.nerecipe.dto.Recipe
+import ru.netology.nerecipe.dto.Category
 
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
 class RecipeCreateFragment : Fragment() {
     private val viewModel by activityViewModels<RecipeViewModel>()
-    private var categoryRecipeNumber = ""
+    private lateinit var categoryRecipeNumber : String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,13 +29,13 @@ class RecipeCreateFragment : Fragment() {
 
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
-                R.id.checkBoxEuropean -> categoryRecipeNumber = Recipe.Category.European.category
-                R.id.checkBoxAsian -> categoryRecipeNumber = Recipe.Category.Asian.category
-                R.id.checkBoxPanasian -> categoryRecipeNumber = Recipe.Category.Panasian.category
-                R.id.checkBoxEastern -> categoryRecipeNumber = Recipe.Category.Eastern.category
-                R.id.checkBoxAmerican -> categoryRecipeNumber = Recipe.Category.American.category
-                R.id.checkBoxRussian -> categoryRecipeNumber = Recipe.Category.Russian.category
-                R.id.checkBoxMediterranean -> categoryRecipeNumber = Recipe.Category.Mediterranean.category
+                R.id.checkBoxEuropean -> categoryRecipeNumber = Category.European.nameCategory
+                R.id.checkBoxAsian -> categoryRecipeNumber = Category.Asian.nameCategory
+                R.id.checkBoxPanasian -> categoryRecipeNumber = Category.Panasian.nameCategory
+                R.id.checkBoxEastern -> categoryRecipeNumber = Category.Eastern.nameCategory
+                R.id.checkBoxAmerican -> categoryRecipeNumber = Category.American.nameCategory
+                R.id.checkBoxRussian -> categoryRecipeNumber = Category.Russian.nameCategory
+                R.id.checkBoxMediterranean -> categoryRecipeNumber = Category.Mediterranean.nameCategory
             }
         }
 

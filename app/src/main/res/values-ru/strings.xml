@@ -19,11 +19,11 @@
     <string name="all_recipes">Все рецепты</string>
     <string name="european_type">Европейская</string>
     <string name="asian_type">Азиатская</string>
-    <string name="panasian_type" translatable="false">Паназиатская</string>
-    <string name="eastern_type" translatable="false">Восточная</string>
-    <string name="american_type" translatable="false">Американская</string>
-    <string name="russian_type" translatable="false">Русская</string>
-    <string name="mediterranean_type" translatable="false">Средиземноморская</string>
+    <string name="panasian_type" >Паназиатская</string>
+    <string name="eastern_type" >Восточная</string>
+    <string name="american_type" >Американская</string>
+    <string name="russian_type" >Русская</string>
+    <string name="mediterranean_type" >Средиземноморская</string>
     <string name="remove">Удалить</string>
     <string name="edit">Редактировать</string>
     <string name="add_ingredient_title">Ингредиенты</string>

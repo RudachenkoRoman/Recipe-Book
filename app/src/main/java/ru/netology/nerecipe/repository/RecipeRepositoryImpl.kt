@@ -5,6 +5,7 @@ import ru.netology.nerecipe.dto.Recipe
 import ru.netology.nerecipe.dao.RecipeDao
 import ru.netology.nerecipe.dto.toEntity
 import ru.netology.nerecipe.dto.toModel
+import java.util.*
 
 class RecipeRepositoryImpl(
     private val dao: RecipeDao
@@ -24,8 +25,6 @@ class RecipeRepositoryImpl(
         if (recipe.id == RecipeRepository.NEW_ID) dao.save(recipe = recipe.toEntity())
         else dao.updateContentById(
             recipe.toEntity()
-//            recipe.id, recipe.title, recipe.authorName,
-//            recipe.categoryRecipe, recipe.textRecipe
         )
     }
 
@@ -77,13 +76,11 @@ class RecipeRepositoryImpl(
         }
     }
 
-
     override fun showRussian(type: String) {
         data = data.map {
             it.filter { it.categoryRecipe != (type) }
         }
     }
-
 
     override fun showMediterranean(type: String) {
         data = data.map {

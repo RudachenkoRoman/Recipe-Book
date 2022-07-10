@@ -38,33 +38,6 @@ class RecipeFavoriteFragment : Fragment() {
             val favRecipes = recipes.filter { it.isFavorite }
             adapter.submitList(favRecipes)
         }
-
-        binding.bottomToolbar.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.feed -> findNavController().popBackStack()
-            }
-            true
-        }
-        binding.bottomToolbar.setOnItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.favorites -> {
-                    viewModel.favoriteFragment.call()
-                    true
-                }
-                R.id.filter -> {
-                    viewModel.filterFragment.call()
-                    true
-                }
-                R.id.feed -> {
-                    viewModel.feedFragment.observe(viewLifecycleOwner) {
-                        val directions = RecipeFavoriteFragmentDirections.actionFavoriteFragmentToFeedFragment()
-                        findNavController().navigate(directions)
-                    }
-                    true
-                }
-                else -> false
-            }
-        }
     }.root
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -17,13 +17,6 @@ class RecipeViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ) = FragmentViewRecipeBinding.inflate(layoutInflater, container, false).also { binding ->
         incomingArg(binding)
-        binding.bottomToolbar.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.feed -> findNavController().popBackStack()
-            }
-            true
-        }
-
     }.root
 
     private fun incomingArg (binding: FragmentViewRecipeBinding) {

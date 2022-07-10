@@ -119,20 +119,6 @@ class FeedRecipeFragment : Fragment() {
             })
         }
 
-        binding.bottomToolbar.setOnItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.favorites -> {
-                    viewModel.favoriteFragment.call()
-                    true
-                }
-                R.id.filter -> {
-                    viewModel.filterFragment.call()
-                    true
-                }
-                else -> false
-            }
-        }
-
         binding.buttonAdd.setOnClickListener {
             viewModel.onCreateClicked()
         }
