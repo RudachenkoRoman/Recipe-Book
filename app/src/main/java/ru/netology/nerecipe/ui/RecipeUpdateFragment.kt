@@ -28,13 +28,13 @@ class RecipeUpdateFragment : Fragment() {
 
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
-                R.id.checkBoxEuropean -> categoryRecipeNumber = Category.European.nameCategory
-                R.id.checkBoxAsian -> categoryRecipeNumber = Category.Asian.nameCategory
-                R.id.checkBoxPanasian -> categoryRecipeNumber = Category.Panasian.nameCategory
-                R.id.checkBoxEastern -> categoryRecipeNumber = Category.Eastern.nameCategory
-                R.id.checkBoxAmerican -> categoryRecipeNumber = Category.American.nameCategory
-                R.id.checkBoxRussian -> categoryRecipeNumber = Category.Russian.nameCategory
-                R.id.checkBoxMediterranean -> categoryRecipeNumber = Category.Mediterranean.nameCategory
+                R.id.checkBoxEuropean -> categoryRecipeNumber = "Европейская кухня"
+                R.id.checkBoxAsian -> categoryRecipeNumber = "Азиатская кухня"
+                R.id.checkBoxPanasian -> categoryRecipeNumber = "Паназиатская кухня"
+                R.id.checkBoxEastern -> categoryRecipeNumber = "Восточная кухня"
+                R.id.checkBoxAmerican -> categoryRecipeNumber = "Американская кухня"
+                R.id.checkBoxRussian -> categoryRecipeNumber = "Русская кухня"
+                R.id.checkBoxMediterranean -> categoryRecipeNumber = "Средиземноморская кухня"
             }
         }
 
