@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentCreateBinding
-import ru.netology.nerecipe.dto.Category
 
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 

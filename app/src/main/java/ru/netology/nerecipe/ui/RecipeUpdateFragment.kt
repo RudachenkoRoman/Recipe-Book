@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentUpdateBinding
-import ru.netology.nerecipe.dto.Category
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
 class RecipeUpdateFragment : Fragment() {
