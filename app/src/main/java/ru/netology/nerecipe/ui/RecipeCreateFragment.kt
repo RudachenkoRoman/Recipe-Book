@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentCreateBinding
+import ru.netology.nerecipe.dto.Recipe
 
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
@@ -28,13 +29,13 @@ class RecipeCreateFragment : Fragment() {
 
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
-                R.id.checkBoxEuropean -> categoryRecipeNumber = "Европейская кухня"
-                R.id.checkBoxAsian -> categoryRecipeNumber = "Азиатская кухня"
-                R.id.checkBoxPanasian -> categoryRecipeNumber = "Паназиатская кухня"
-                R.id.checkBoxEastern -> categoryRecipeNumber = "Восточная кухня"
-                R.id.checkBoxAmerican -> categoryRecipeNumber = "Американская кухня"
-                R.id.checkBoxRussian -> categoryRecipeNumber = "Русская кухня"
-                R.id.checkBoxMediterranean -> categoryRecipeNumber = "Средиземноморская кухня"
+                R.id.checkBoxEuropean -> categoryRecipeNumber = Recipe.Category.European.category
+                R.id.checkBoxAsian -> categoryRecipeNumber = Recipe.Category.Asian.category
+                R.id.checkBoxPanasian -> categoryRecipeNumber = Recipe.Category.Panasian.category
+                R.id.checkBoxEastern -> categoryRecipeNumber = Recipe.Category.Eastern.category
+                R.id.checkBoxAmerican -> categoryRecipeNumber = Recipe.Category.American.category
+                R.id.checkBoxRussian -> categoryRecipeNumber = Recipe.Category.Russian.category
+                R.id.checkBoxMediterranean -> categoryRecipeNumber = Recipe.Category.Mediterranean.category
             }
         }
 
