@@ -57,7 +57,7 @@ class RecipeAdapter(
             with(binding) {
                 title.text = recipe.title
                 authorName.text = recipe.authorName
-                categoryRecipe.text = recipe.categoryRecipe.toString()
+                categoryRecipe.text = recipe.categoryRecipe
                 textRecipe.text = recipe.textRecipe
                 buttonFavorite.setImageResource(getFavoriteIconResId(recipe.isFavorite))
                 buttonFavorite.setOnClickListener {
@@ -80,13 +80,13 @@ class RecipeAdapter(
                 }
             }
         }
+    }
 
         @DrawableRes
         fun getFavoriteIconResId(liked:Boolean) =
             if (liked) R.drawable.icon_is_favorites else R.drawable.icon_is_not_favorites
     }
 
-}
 
 private object DiffCallback : DiffUtil.ItemCallback<Recipe>() {
 

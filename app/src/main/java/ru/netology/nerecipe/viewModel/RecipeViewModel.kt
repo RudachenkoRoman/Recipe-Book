@@ -46,6 +46,10 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
         repositorySettings.clearStateSwitch().clear()
     }
 
+    fun getCategoriesCount(): Int {
+        return categoryList.size
+    }
+
     private fun setupCategories(key: String, b: Boolean) {
         if (key == Recipe.Category.European.key) {
             if (b) {

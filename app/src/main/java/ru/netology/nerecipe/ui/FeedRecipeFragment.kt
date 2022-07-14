@@ -21,7 +21,6 @@ import ru.netology.nerecipe.viewModel.RecipeViewModel
 class FeedRecipeFragment : Fragment() {
 
     private val viewModel by activityViewModels<RecipeViewModel>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -80,7 +79,6 @@ class FeedRecipeFragment : Fragment() {
             binding.buttonClearFilter.isVisible = viewModel.filterIsActive
             binding.buttonClearFilter.setOnClickListener {
                 viewModel.clearFilter()
-                viewModel.clearStateSwitch()
                 viewModel.filterIsActive = false
                 binding.buttonClearFilter.visibility = View.GONE
                 viewModel.data.observe(viewLifecycleOwner) { recipe ->

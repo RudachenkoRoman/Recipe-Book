@@ -3,13 +3,10 @@ package ru.netology.nerecipe.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.CheckBox
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentFilterBinding
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
@@ -40,49 +37,79 @@ class RecipeFilterFragment : Fragment() {
                     KEY_STATE_SWITCH_EUROPEAN,
                     checkBoxEuropean.isChecked
                 )
+                switchesIsChecked(binding)
             }
             checkBoxAsian.setOnClickListener {
                 viewModel.saveStateSwitch(
                     KEY_STATE_SWITCH_ASIAN,
                     checkBoxAsian.isChecked
                 )
+                switchesIsChecked(binding)
             }
             checkBoxPanasian.setOnClickListener {
                 viewModel.saveStateSwitch(
                     KEY_STATE_SWITCH_PAN_ASIAN,
                     checkBoxPanasian.isChecked
                 )
+                switchesIsChecked(binding)
             }
             checkBoxEastern.setOnClickListener {
                 viewModel.saveStateSwitch(
                     KEY_STATE_SWITCH_EASTERN,
                     checkBoxEastern.isChecked
                 )
+                switchesIsChecked(binding)
             }
             checkBoxAmerican.setOnClickListener {
                 viewModel.saveStateSwitch(
                     KEY_STATE_SWITCH_AMERICAN,
                     checkBoxAmerican.isChecked
                 )
+                switchesIsChecked(binding)
             }
             checkBoxRussian.setOnClickListener {
                 viewModel.saveStateSwitch(
                     KEY_STATE_SWITCH_RUSSIAN,
                     checkBoxRussian.isChecked
                 )
+                switchesIsChecked(binding)
             }
             checkBoxMediterranean.setOnClickListener {
                 viewModel.saveStateSwitch(
                     KEY_STATE_SWITCH_MEDITERANEAN,
                     checkBoxMediterranean.isChecked
                 )
+                switchesIsChecked(binding)
             }
         }
         binding.buttonApply.setOnClickListener {
             onApplyButtonClicked(binding)
         }
-
     }.root
+
+    private fun switchesIsChecked(binding: FragmentFilterBinding) {
+        if (viewModel.filterIsActive) {
+            with(binding) {
+//                if (checkBoxEuropean.isChecked) checkBoxEuropean.isChecked= false
+//                if (checkBoxAsian.isChecked) checkBoxAsian.isChecked = false
+//                if (checkBoxPanasian.isChecked) checkBoxPanasian.isChecked = false
+//                if (checkBoxEastern.isChecked) checkBoxEastern.isChecked = false
+//                if (checkBoxAmerican.isChecked) checkBoxAmerican.isChecked = false
+//                if (checkBoxRussian.isChecked) checkBoxRussian.isChecked = false
+//                if (checkBoxMediterranean.isChecked) checkBoxMediterranean.isChecked = false
+            }
+        } else {
+            with(binding) {
+//                if (checkBoxEuropean.isChecked) checkBoxEuropean.isChecked  = true
+//                if (checkBoxAsian.isChecked) checkBoxAsian.isEnabled = true
+//                if (checkBoxPanasian.isChecked) checkBoxPanasian.isEnabled = true
+//                if (checkBoxEastern.isChecked) checkBoxEastern.isEnabled = true
+//                if (checkBoxAmerican.isChecked) checkBoxAmerican.isEnabled = true
+//                if (checkBoxRussian.isChecked) checkBoxRussian.isEnabled = true
+//                if (checkBoxMediterranean.isChecked) checkBoxMediterranean.isEnabled = true
+            }
+        }
+    }
 
     companion object {
         const val KEY_STATE_SWITCH_EUROPEAN = "european"
@@ -132,4 +159,5 @@ class RecipeFilterFragment : Fragment() {
         } else findNavController().popBackStack()
     }
 }
+
 
