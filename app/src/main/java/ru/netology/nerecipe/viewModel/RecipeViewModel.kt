@@ -8,6 +8,8 @@ import ru.netology.nerecipe.dto.Recipe
 import ru.netology.nerecipe.repository.RecipeRepositoryImpl
 import ru.netology.nerecipe.db.AppDb
 import ru.netology.nerecipe.repository.RecipeRepository
+import ru.netology.nerecipe.settings.SettingsRepository
+import ru.netology.nerecipe.settings.SharedPrefsSettingsRepository
 import ru.netology.nerecipe.util.Event
 
 class RecipeViewModel(application: Application) : AndroidViewModel(application),
@@ -25,15 +27,83 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
     val filterFragment = Event<Unit>()
     val updateRecipe = MutableLiveData<Recipe>(null)
     val singleRecipe = MutableLiveData<Recipe?>(null)
-    val feedFragment = data
     private val currentRecipe = MutableLiveData<Recipe?>(null)
+    private val repositorySettings: SettingsRepository = SharedPrefsSettingsRepository(application)
+    private val categoryList = mutableSetOf<Int>()
 
+    override fun saveStateSwitch(key: String, b: Boolean) {
+        setupCategories(key, b)
+        repositorySettings.saveStateSwitch(key, b)
+    }
 
+    override fun getStateSwitch(key: String): Boolean {
+        val b = repositorySettings.getStateSwitch(key)
+        setupCategories(key, b)
+        return b
+    }
+
+    override fun clearStateSwitch() {
+        repositorySettings.clearStateSwitch().clear()
+    }
+
+    private fun setupCategories(key: String, b: Boolean) {
+        if (key == Recipe.Category.European.key) {
+            if (b) {
+                categoryList.add(Recipe.Category.European.id)
+            } else {
+                categoryList.remove(Recipe.Category.European.id)
+            }
+        }
+        if (key == Recipe.Category.Asian.key) {
+            if (b) {
+                categoryList.add(Recipe.Category.Asian.id)
+            } else {
+                categoryList.remove(Recipe.Category.Asian.id)
+            }
+        }
+        if (key == Recipe.Category.Panasian.key) {
+            if (b) {
+                categoryList.add(Recipe.Category.Panasian.id)
+            } else {
+                categoryList.remove(Recipe.Category.Panasian.id)
+            }
+        }
+        if (key == Recipe.Category.Eastern.key) {
+            if (b) {
+                categoryList.add(Recipe.Category.Eastern.id)
+            } else {
+                categoryList.remove(Recipe.Category.Eastern.id)
+            }
+        }
+        if (key == Recipe.Category.American.key) {
+            if (b) {
+                categoryList.add(Recipe.Category.American.id)
+            } else {
+                categoryList.remove(Recipe.Category.American.id)
+            }
+        }
+        if (key == Recipe.Category.Russian.key) {
+            if (b) {
+                categoryList.add(Recipe.Category.Russian.id)
+            } else {
+                categoryList.remove(Recipe.Category.Russian.id)
+            }
+        }
+        if (key == Recipe.Category.Mediterranean.key) {
+            if (b) {
+
+                categoryList.add(Recipe.Category.Mediterranean.id)
+            } else {
+
+                categoryList.remove(Recipe.Category.Mediterranean.id)
+            }
+        }
+        repository.setFilter(categoryList)
+    }
 
     fun clearFilter() {
         repository.getData()
     }
-
 
     override fun updateContent(
         id: Long,

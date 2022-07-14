@@ -17,14 +17,17 @@ data class Recipe(
 ) : Parcelable {
 
     @Parcelize
-    enum class Category(val category: String) : Parcelable {
-        European("Европейская кухня"),
-        Asian("Азиатская кухня"),
-        Panasian("Паназиатская кухня"),
-        Eastern("Восточная кухня"),
-        American("Американская кухня"),
-        Russian("Русская кухня",),
-        Mediterranean("Средиземноморская кухня")
+    enum class Category(
+        val key: String,
+        val id: Int
+        ) : Parcelable {
+        European("Европейская кухня", 0),
+        Asian("Азиатская кухня", 1),
+        Panasian("Паназиатская кухня", 2),
+        Eastern("Восточная кухня", 3),
+        American("Американская кухня", 4),
+        Russian("Русская кухня", 5),
+        Mediterranean("Средиземноморская кухня", 6)
     }
 }
 

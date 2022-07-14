@@ -12,7 +12,7 @@ interface RecipeRepository {
     fun favorite(long: Long)
     fun searchText(Text: String)
     fun getData()
-
+    fun setFilter(categories: Set<Int>)
 
     fun showEuropean(type: String)
     fun showAsian(type: String)

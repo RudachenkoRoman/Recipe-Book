@@ -1,5 +1,6 @@
 package ru.netology.nerecipe.repository
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
 import ru.netology.nerecipe.dto.Recipe
 import ru.netology.nerecipe.dao.RecipeDao
@@ -11,6 +12,8 @@ class RecipeRepositoryImpl(
     private val dao: RecipeDao
 ) : RecipeRepository {
 
+    private var categoriesLiveData: MutableLiveData<Set<Int>> = MutableLiveData()
+
     override var data = dao.getAll().map { entities ->
         entities.map { it.toModel() }
     }
@@ -20,6 +23,11 @@ class RecipeRepositoryImpl(
             entities.map { it.toModel() }
         }
     }
+
+    override fun setFilter(categories: Set<Int>) {
+        categoriesLiveData.value = categories
+    }
+
 
     override fun save(recipe: Recipe) {
         if (recipe.id == RecipeRepository.NEW_ID) dao.save(recipe = recipe.toEntity())

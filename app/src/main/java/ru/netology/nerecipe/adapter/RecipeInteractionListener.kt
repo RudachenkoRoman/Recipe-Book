@@ -11,4 +11,7 @@ interface RecipeInteractionListener {
     fun updateContent(id: Long, title: String, authorNam: String, categoryRecipe: String, textRecipe: String)
     fun onSaveClicked(title: String, authorNam: String, categoryRecipe: String, textRecipe: String)
     fun onSingleRecipeClicked(recipe: Recipe)
+    fun saveStateSwitch(key: String, b: Boolean)
+    fun getStateSwitch(key: String): Boolean
+    fun clearStateSwitch()
 }
