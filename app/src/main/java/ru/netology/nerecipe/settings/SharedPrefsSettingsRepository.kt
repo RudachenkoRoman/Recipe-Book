@@ -15,5 +15,5 @@ class SharedPrefsSettingsRepository(
 
     override fun getStateSwitch(key: String): Boolean = prefs.getBoolean(key, true)
 
-    override fun clearStateSwitch(): SharedPreferences.Editor = prefs.edit().clear()
+    override fun clearStateSwitch(): SharedPreferences.Editor = prefs.edit().clear().apply {  }
 }

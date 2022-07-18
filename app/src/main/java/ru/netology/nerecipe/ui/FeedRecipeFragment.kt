@@ -79,6 +79,7 @@ class FeedRecipeFragment : Fragment() {
             binding.buttonClearFilter.isVisible = viewModel.filterIsActive
             binding.buttonClearFilter.setOnClickListener {
                 viewModel.clearFilter()
+                viewModel.clearStateSwitch()
                 viewModel.filterIsActive = false
                 binding.buttonClearFilter.visibility = View.GONE
                 viewModel.data.observe(viewLifecycleOwner) { recipe ->

@@ -43,11 +43,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
     }
 
     override fun clearStateSwitch() {
-        repositorySettings.clearStateSwitch().clear()
-    }
-
-    fun getCategoriesCount(): Int {
-        return categoryList.size
+        repositorySettings.clearStateSwitch().clear().apply()
     }
 
     private fun setupCategories(key: String, b: Boolean) {
