@@ -11,7 +11,7 @@ data class Recipe(
     val id: Long,
     val title: String,
     val authorName: String,
-    val categoryRecipe: String,
+    val categoryRecipe: Category,
     val textRecipe: String,
     val isFavorite: Boolean = false,
 ) : Parcelable {
@@ -20,7 +20,7 @@ data class Recipe(
     enum class Category(
         val key: String,
         val id: Int
-        ) : Parcelable {
+        ) : Parcelable{
         European("Европейская кухня", 0),
         Asian("Азиатская кухня", 1),
         Panasian("Паназиатская кухня", 2),

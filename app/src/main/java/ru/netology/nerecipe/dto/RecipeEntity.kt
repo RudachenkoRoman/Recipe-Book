@@ -15,7 +15,7 @@ class RecipeEntity(
     @ColumnInfo(name = "authorName")
     val authorName: String,
     @ColumnInfo(name = "categoryRecipe")
-    val categoryRecipe: String,
+    val categoryRecipe: Recipe.Category,
     @ColumnInfo(name = "textRecipe")
     val textRecipe: String,
     @ColumnInfo(name = "isFavorite")

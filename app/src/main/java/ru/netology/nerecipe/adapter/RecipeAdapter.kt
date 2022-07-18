@@ -57,7 +57,7 @@ class RecipeAdapter(
             with(binding) {
                 title.text = recipe.title
                 authorName.text = recipe.authorName
-                categoryRecipe.text = recipe.categoryRecipe
+                categoryRecipe.text = recipe.categoryRecipe.toString()
                 textRecipe.text = recipe.textRecipe
                 buttonFavorite.setImageResource(getFavoriteIconResId(recipe.isFavorite))
                 buttonFavorite.setOnClickListener {

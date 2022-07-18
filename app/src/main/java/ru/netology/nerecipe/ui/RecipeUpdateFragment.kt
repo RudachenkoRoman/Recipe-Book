@@ -17,7 +17,8 @@ class RecipeUpdateFragment : Fragment() {
 
     private val viewModel by activityViewModels<RecipeViewModel>()
     private val args by navArgs<RecipeUpdateFragmentArgs>()
-    private var categoryRecipeNumber = ""
+    private var categoryRecipeNumber = " " +
+            ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,13 +29,13 @@ class RecipeUpdateFragment : Fragment() {
 
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
-                R.id.checkBoxEuropean -> categoryRecipeNumber = Recipe.Category.European.key
-                R.id.checkBoxAsian -> categoryRecipeNumber = Recipe.Category.Asian.key
-                R.id.checkBoxPanasian -> categoryRecipeNumber = Recipe.Category.Panasian.key
-                R.id.checkBoxEastern -> categoryRecipeNumber = Recipe.Category.Eastern.key
-                R.id.checkBoxAmerican -> categoryRecipeNumber = Recipe.Category.American.key
-                R.id.checkBoxRussian -> categoryRecipeNumber = Recipe.Category.Russian.key
-                R.id.checkBoxMediterranean -> categoryRecipeNumber = Recipe.Category.Mediterranean.key
+                R.id.checkBoxEuropean -> categoryRecipeNumber //= Recipe.Category.European.key
+                R.id.checkBoxAsian -> categoryRecipeNumber //= Recipe.Category.Asian.key
+                R.id.checkBoxPanasian -> categoryRecipeNumber //= Recipe.Category.Panasian.key
+                R.id.checkBoxEastern -> categoryRecipeNumber //= Recipe.Category.Eastern.key
+                R.id.checkBoxAmerican -> categoryRecipeNumber //= Recipe.Category.American.key
+                R.id.checkBoxRussian -> categoryRecipeNumber //= Recipe.Category.Russian.key
+                R.id.checkBoxMediterranean -> categoryRecipeNumber //= Recipe.Category.Mediterranean.key
             }
         }
 
