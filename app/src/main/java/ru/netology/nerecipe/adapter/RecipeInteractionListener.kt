@@ -8,8 +8,8 @@ interface RecipeInteractionListener {
     fun onFavoriteClicked(recipeId: Long)
     fun onSearchClicked(text: String)
     fun onCreateClicked()
-    fun updateContent(id: Long, title: String, authorNam: String, categoryRecipe: Recipe.Category, textRecipe: String)
-    fun onSaveClicked(title: String, authorNam: String, categoryRecipe: Recipe.Category, textRecipe: String)
+    fun updateContent(id: Long, title: String, authorNam: String, categoryRecipe: String, textRecipe: String)
+    fun onSaveClicked(title: String, authorNam: String, categoryRecipe: String, textRecipe: String)
     fun onSingleRecipeClicked(recipe: Recipe)
     fun saveStateSwitch(key: String, b: Boolean)
     fun getStateSwitch(key: String): Boolean

@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentFilterBinding
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
@@ -96,34 +97,34 @@ class RecipeFilterFragment : Fragment() {
 
         if (!binding.checkBoxEuropean.isChecked) {
             ++checkedCount
-            viewModel.showEuropean("Европейская кухня")
+            viewModel.showEuropean(getString(R.string.european_type))
         }
         if (!binding.checkBoxAsian.isChecked) {
             ++checkedCount
-            viewModel.showAsian("Азиатская кухня")
+            viewModel.showAsian(getString(R.string.asian_type))
         }
         if (!binding.checkBoxPanasian.isChecked) {
             ++checkedCount
-            viewModel.showPanasian("Паназиатская кухня")
+            viewModel.showPanasian(getString(R.string.panasian_type))
         }
         if (!binding.checkBoxEastern.isChecked) {
             ++checkedCount
-            viewModel.showEastern("Восточная кухня")
+            viewModel.showEastern(getString(R.string.eastern_type))
         }
         if (!binding.checkBoxAmerican.isChecked) {
             ++checkedCount
-            viewModel.showAmerican("Американская кухня")
+            viewModel.showAmerican(getString(R.string.american_type))
         }
         if (!binding.checkBoxRussian.isChecked) {
             ++checkedCount
-            viewModel.showRussian("Русская кухня")
+            viewModel.showRussian(getString(R.string.russian_type))
         }
         if (!binding.checkBoxMediterranean.isChecked) {
             ++checkedCount
-            viewModel.showMediterranean( "Средиземноморская кухня")
+            viewModel.showMediterranean( getString(R.string.russian_type))
         }
         if (checkedCount == numberOfFilters) {
-            Toast.makeText(activity, "Выберите хотя бы один вариант", Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, getString(R.string.please_select_at_least_one_option), Toast.LENGTH_LONG).show()
             return
         } else findNavController().popBackStack()
     }

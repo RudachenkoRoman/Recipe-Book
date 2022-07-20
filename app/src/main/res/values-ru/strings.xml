@@ -28,5 +28,6 @@
     <string name="edit">Редактировать</string>
     <string name="add_ingredient_title">Ингредиенты</string>
     <string name="add_step_title">Основные шаги</string>
+    <string name="please_select_at_least_one_option">Выберите хотя бы один вариант</string>
 
 </resources>

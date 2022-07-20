@@ -9,7 +9,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import ru.netology.nerecipe.R
 import ru.netology.nerecipe.databinding.FragmentCreateBinding
-import ru.netology.nerecipe.dto.Recipe
 
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
@@ -29,13 +28,13 @@ class RecipeCreateFragment : Fragment() {
 
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
-                R.id.checkBoxEuropean -> categoryRecipeNumber //= Recipe.Category.European.key
-                R.id.checkBoxAsian -> categoryRecipeNumber //= Recipe.Category.Asian.key
-                R.id.checkBoxPanasian -> categoryRecipeNumber //= Recipe.Category.Panasian.key
-                R.id.checkBoxEastern -> categoryRecipeNumber //= Recipe.Category.Eastern.key
-                R.id.checkBoxAmerican -> categoryRecipeNumber //= Recipe.Category.American.key
-                R.id.checkBoxRussian -> categoryRecipeNumber //= Recipe.Category.Russian.key
-                R.id.checkBoxMediterranean -> categoryRecipeNumber //= Recipe.Category.Mediterranean.key
+                R.id.checkBoxEuropean -> categoryRecipeNumber = getString(R.string.european_type)
+                R.id.checkBoxAsian -> categoryRecipeNumber = getString(R.string.asian_type)
+                R.id.checkBoxPanasian -> categoryRecipeNumber = getString(R.string.panasian_type)
+                R.id.checkBoxEastern -> categoryRecipeNumber = getString(R.string.eastern_type)
+                R.id.checkBoxAmerican -> categoryRecipeNumber = getString(R.string.american_type)
+                R.id.checkBoxRussian -> categoryRecipeNumber = getString(R.string.russian_type)
+                R.id.checkBoxMediterranean -> categoryRecipeNumber = getString(R.string.mediterranean_type)
             }
         }
 
@@ -43,6 +42,7 @@ class RecipeCreateFragment : Fragment() {
             onSaveButtonClicked(binding)
         }
     }.root
+
 
     private fun onSaveButtonClicked(binding: FragmentCreateBinding) {
 
@@ -73,9 +73,11 @@ class RecipeCreateFragment : Fragment() {
         textRecipe: String,
         categoryRecipe: String
     ): Boolean {
-        return if (title.isBlank() || authorName.isBlank() || textRecipe.isBlank() || categoryRecipe.isBlank()) {
+        return if (title.isBlank() || authorName.isBlank() || textRecipe.isBlank() || categoryRecipe.isBlank()){
             Toast.makeText(activity, "All fields must be filled in", Toast.LENGTH_LONG).show()
             false
-        } else true
+        } else {
+            true
+        }
     }
 }

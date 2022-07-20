@@ -109,7 +109,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
         id: Long,
         title: String,
         authorNam: String,
-        categoryRecipe: Recipe.Category,
+        categoryRecipe: String,
         textRecipe: String
     ) {
         val recipe = Recipe(
@@ -143,7 +143,7 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application),
         createFragment.call()
     }
 
-     override fun onSaveClicked(title: String, authorNam: String, categoryRecipe: Recipe.Category, textRecipe: String) {
+     override fun onSaveClicked(title: String, authorNam: String, categoryRecipe: String, textRecipe: String) {
 
         val recipe = Recipe(
             id = RecipeRepository.NEW_ID,

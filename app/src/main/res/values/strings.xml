@@ -5,9 +5,9 @@
     <string name="text_background">There is nothing here! Let is fix it</string>
     <string name="text_hint">textHint</string>
     <string name="button_clear_filter">ClearFilter</string>
-    <string name="title_hint">title_hint</string>
-    <string name="author_name_hint">author_name_hint</string>
-    <string name="text_recipe_hint">text_recipe_hint</string>
+    <string name="title_hint">Enter recipe name</string>
+    <string name="author_name_hint">Enter name author recipe</string>
+    <string name="text_recipe_hint">Enter recipe description</string>
     <string name="european_type">European</string>
     <string name="asian_type">Asian</string>
     <string name="panasian_type" >Panasian</string>
@@ -28,5 +28,6 @@
     <string name="edit">Edit</string>
     <string name="add_ingredient_title">Add ingredient</string>
     <string name="add_step_title">Add Step</string>
+    <string name="please_select_at_least_one_option">Please select at least one option</string>
 
 </resources>
