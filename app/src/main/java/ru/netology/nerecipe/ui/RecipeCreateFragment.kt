@@ -14,7 +14,7 @@ import ru.netology.nerecipe.viewModel.RecipeViewModel
 
 class RecipeCreateFragment : Fragment() {
     private val viewModel by activityViewModels<RecipeViewModel>()
-    private var categoryRecipeNumber = ""
+     var categoryRecipeNumber = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,

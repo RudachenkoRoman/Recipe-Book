@@ -24,7 +24,6 @@ class RecipeUpdateFragment : Fragment() {
         savedInstanceState: Bundle?
     ) = FragmentUpdateBinding.inflate(layoutInflater, container, false).also { binding ->
         incomingArg(binding)
-
         binding.categoryRecipeCheckBoxOne.setOnCheckedChangeListener { _, i ->
             when (i) {
                 R.id.checkBoxEuropean -> categoryRecipeNumber = getString(R.string.european_type)
@@ -36,14 +35,26 @@ class RecipeUpdateFragment : Fragment() {
                 R.id.checkBoxMediterranean -> categoryRecipeNumber = getString(R.string.mediterranean_type)
             }
         }
-
         binding.buttonSave.setOnClickListener {
             onSaveButtonClicked(binding)
         }
-
-
     }.root
 
+    private fun incomingArg(binding: FragmentUpdateBinding){
+        binding.title.setText(args.idRecipe?.title)
+        binding.authorName.setText(args.idRecipe?.authorName)
+        binding.textRecipe.setText(args.idRecipe?.textRecipe)
+        binding.categoryRecipeCheckBoxOne.check(when (args.idRecipe?.categoryRecipe) {
+            getString(R.string.european_type) -> R.id.checkBoxEuropean
+            getString(R.string.asian_type) -> R.id.checkBoxAsian
+            getString(R.string.panasian_type) -> R.id.checkBoxPanasian
+            getString(R.string.eastern_type) -> R.id.checkBoxEastern
+            getString(R.string.american_type) -> R.id.checkBoxAmerican
+            getString(R.string.russian_type) -> R.id.checkBoxRussian
+            getString(R.string.mediterranean_type) -> R.id.checkBoxMediterranean
+            else -> -1
+        })
+    }
 
     private fun onSaveButtonClicked(binding: FragmentUpdateBinding) {
 
@@ -62,12 +73,6 @@ class RecipeUpdateFragment : Fragment() {
             categoryRecipe = categoryRecipeNumber
         )
         findNavController().popBackStack()
-    }
-
-    private fun incomingArg(binding: FragmentUpdateBinding){
-        binding.title.setText(args.idRecipe?.title)
-        binding.authorName.setText(args.idRecipe?.authorName)
-        binding.textRecipe.setText(args.idRecipe?.textRecipe)
     }
 
     private fun emptyCheckUpdateWarning(
