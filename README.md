@@ -1,4 +1,11 @@
-# NeRecipe
+# Книга рецептов
+
+## Запуск проекта:
+* Склонировать проект на ваш компьютер с Github с помощью команды:
+```
+https://github.com/RudachenkoRoman/NeRecipe.git
+```
+
 ## Главный экран с рецептами
 ![all_recipe](https://user-images.githubusercontent.com/97969577/176727442-774a9f9b-9412-4532-b0aa-e1caf20100e7.gif)
 ## Поиск
